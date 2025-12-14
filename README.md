@@ -14,6 +14,14 @@ A small Python utility that fetches the latest Canadian prime rate from the Bank
 3. Run the tracker (creates `data/prime_rates.sqlite3` by default):
    - `python -m prime_rate_tracker`
 
+## One-step run script (for non-developers)
+
+You can also execute `./run.sh`, which will:
+
+- Create `.venv` if missing
+- Install the package into `.venv`
+- Run `python -m prime_rate_tracker` with any arguments you pass through
+
 ## Development
 
 - Python 3.12 recommended.
