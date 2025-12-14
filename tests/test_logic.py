@@ -47,3 +47,25 @@ def test_date_only_change_updates_current_only(tmp_path) -> None:
     assert current == ("2024-02-01", 7.2)
     assert history_rows == 1
 
+
+def test_updated_at_refreshes_when_rate_unchanged(tmp_path, monkeypatch) -> None:
+    db_path = tmp_path / "prime.sqlite3"
+    db = PrimeRateDatabase(db_path)
+    db.ensure_schema()
+
+    prime = PrimeRate(date="2024-01-01", rate=7.2)
+
+    times = iter(["2024-01-01T00:00:00Z", "2024-01-01T00:00:10Z"])
+    monkeypatch.setattr(PrimeRateDatabase, "_now", staticmethod(lambda: next(times)))
+
+    db.apply_update(prime)
+    db.apply_update(prime)
+
+    with sqlite3.connect(db_path) as conn:
+        current = conn.execute(
+            "SELECT as_of_date, rate, updated_at FROM current_prime WHERE id = 1"
+        ).fetchone()
+        history_rows = conn.execute("SELECT COUNT(*) FROM prime_history").fetchone()[0]
+
+    assert current == ("2024-01-01", 7.2, "2024-01-01T00:00:10Z")
+    assert history_rows == 1

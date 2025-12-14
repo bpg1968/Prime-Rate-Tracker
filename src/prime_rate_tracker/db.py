@@ -125,6 +125,17 @@ class PrimeRateDatabase:
                             )
                     return result
 
+                result.current_updated = True
+                if not dry_run:
+                    with conn:
+                        conn.execute(
+                            """
+                            UPDATE current_prime
+                            SET updated_at = ?
+                            WHERE id = 1
+                            """,
+                            (now,),
+                        )
                 return result
         except sqlite3.IntegrityError as exc:
             raise DatabaseError(f"Database constraint violated: {exc}") from exc
@@ -148,4 +159,3 @@ class PrimeRateDatabase:
             .isoformat()
             .replace("+00:00", "Z")
         )
-
