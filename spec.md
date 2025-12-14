@@ -22,27 +22,12 @@ Codex must:
 * Create a reasonable `.gitignore`.
 * Make an **initial commit** once the project skeleton and baseline files are created.
 
-### GitHub (later, only when Brian says it’s ready)
+### GitHub
 
-* Brian will create/setup the GitHub repository manually.
-* **Until Brian explicitly says GitHub is ready**, Codex must **not**:
-
-  * create a remote
-  * push
-  * open PRs
-  * interact with GitHub in any way
-
-Once Brian says GitHub is ready:
-
-* Codex may help configure the remote and push, using Brian’s instructions.
-* The primary branch must remain **`main`**.
-* Codex should behave conservatively (no force pushes unless explicitly requested).
-
-### Reminder to update this spec after GitHub is ready
-
-When Brian indicates that the GitHub repository is set up and ready:
-
-* Codex must **remind Brian to update `spec.md`** to reflect that GitHub interactions are now allowed (and note any remote name/branch conventions decided at that time).
+* GitHub repository is now set up and ready.
+* Remote interactions are allowed.
+* Default remote: **origin**, default branch: **`main`**.
+* Behave conservatively (no force pushes unless explicitly requested).
 
 ### Commit message style (mandatory)
 
@@ -275,4 +260,3 @@ Minimum tests:
 * Clean Git history with sensible commits that follow the commit message style
 * No GitHub interaction until Brian explicitly says GitHub is ready
 * When GitHub becomes ready, Codex reminds Brian to update this spec accordingly
-
