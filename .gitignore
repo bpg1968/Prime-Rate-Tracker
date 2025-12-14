@@ -1,0 +1,28 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments and tooling
+.env
+.venv
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+.idea/
+.vscode/
+.coverage
+coverage.xml
+htmlcov/
+.cache/
+
+# Packaging / build
+dist/
+build/
+*.egg-info/
+
+# Project data
+data/*.sqlite3
+data/*.lock
+
