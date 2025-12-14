@@ -5,7 +5,7 @@ __pycache__/
 
 # Environments and tooling
 .env
-.venv
+.venv/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/

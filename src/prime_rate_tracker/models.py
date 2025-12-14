@@ -29,3 +29,4 @@ class UpdateResult:
     current_created: bool = False
     current_updated: bool = False
     history_inserted: bool = False
+

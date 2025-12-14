@@ -53,3 +53,4 @@ def test_fetcher_raises_on_missing_data(monkeypatch) -> None:
         assert "No observations" in str(exc)
     else:  # pragma: no cover - defensive
         raise AssertionError("ParseError not raised")
+

@@ -13,3 +13,4 @@ def test_lock_prevents_concurrent_execution(tmp_path) -> None:
         with pytest.raises(AlreadyRunningError):
             with process_lock(lock_path):
                 pass
+

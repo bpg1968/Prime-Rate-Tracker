@@ -56,3 +56,4 @@ def fetch_latest_prime(timeout: float = 20.0) -> PrimeRate:
 
     logger.debug("Fetched prime rate %s on %s", rate, date)
     return PrimeRate(date=date, rate=rate)
+

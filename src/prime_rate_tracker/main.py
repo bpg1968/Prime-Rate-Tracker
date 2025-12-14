@@ -91,3 +91,4 @@ def _parse_args(argv: Sequence[str] | None) -> argparse.Namespace:
 def _configure_logging(*, verbose: bool) -> None:
     level = logging.INFO if verbose else logging.WARNING
     logging.basicConfig(level=level, format="%(message)s")
+

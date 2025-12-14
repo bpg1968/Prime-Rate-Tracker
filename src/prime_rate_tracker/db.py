@@ -148,3 +148,4 @@ class PrimeRateDatabase:
             .isoformat()
             .replace("+00:00", "Z")
         )
+

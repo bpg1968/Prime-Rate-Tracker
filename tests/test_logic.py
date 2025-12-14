@@ -46,3 +46,4 @@ def test_date_only_change_updates_current_only(tmp_path) -> None:
 
     assert current == ("2024-02-01", 7.2)
     assert history_rows == 1
+
